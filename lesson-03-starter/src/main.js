@@ -67,7 +67,7 @@ const PERSON = {
     "weight" : "82kg"
 };
 console.log(PERSON,person);
-const person = { name: 'Alex', age: 30 };
+const PERSON_NAME = { name: 'Alex', age: 30 }; // const usually uses screaming snakecase.
 // Student TODO:
 // Prompt the user for their name and age
 // Log a greeting message using the provided name and age
