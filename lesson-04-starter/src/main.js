@@ -2,9 +2,9 @@ console.log('Lesson 04 starter loaded');
 
 // Instructor TODO:
 // 1. Simple if
-const x = 5;//variable assignment
+const x = 5; // variable assignment
 if (x > 0) {
-  console.log('x is +ve(positive)')
+  console.log('x is +ve(positive)');
 };
 // 2. if-else
 // == and === both are comparison operators
@@ -33,9 +33,9 @@ while (count > 0) { // count>0 is a condition
   // The above line could be written like this: (count -=1)
 }
 let counter = 10;
-while (counter === 0) {
+while (counter > 0) {
   console.log(counter);
-  count -= 1;
+  counter -= 1;
 }
 
 // first iteration: (value of count is 3) 3>0 true,countdown :3  3-1= 2
@@ -45,7 +45,22 @@ while (counter === 0) {
 // try printing numbers from 1 to 10 using while loop
 
 // 5. do-while loop
+let i = 0;
+// a do-while loop always runs atleast once even if the condition is false.
+do {
+  console.log('i is:', i);
+  i++;
+} while (i < 3);
+// write a loop that prints numbers from 1 to 10.
+let w = 1;
+while (w <= 10) {
+  console.log(w);
+  w++;
+};
 // 6. for loop
+for (let j = 0; j < 3; j++) {
+  console.log(`j = ${j}`);
+};
 
 // Student TODO:
 // 7. Snippet with bugs for debugging practice
