@@ -25,10 +25,6 @@ heroImg.setAttribute('alt', 'A replaceable sample image'); // 'alt='A replacable
 heroImg.style.borderColor = `#0d6efd`;
 console.warn('name');
 
-if (!x) { // checks if x does not exist.
-  console.log('x does not exist');
-}
-
 // 4. Create small helper functions for reuse
 function updateText(selector, text) {
   const el = document.querySelector(selector);
@@ -39,12 +35,25 @@ function updateText(selector, text) {
     el.textContent = text;
   }
 }
+function updateHTML(selector, code) {
+  const el = document.querySelector(selector);
+  if (!el) {
+    return console.warn('Selected tag does not exist.') 
+  }
+  else {
+    el.innerHTML = code;
+  }
+}
+
 // 5. Use helpers to perform simple tasks
-
+updateText('.tagline', 'Selecting, reading, and modifying nodes with javascript');
+updateHTML('#dynamic-box', `<p class="desc">
+  Replaced again via <code>updateHTML()</code>. Notice how we can inject different markup here.
+  </p>`);
 // 6. Footer text tweak (demonstrate class toggle & style change)
-
+footerNote.classList.add('footer-strong');
 // Require innerHTML here to render the &copy; entity correctly
-
+footerNote.innerHTML = '&copy; 2025 Front End Fundamentals';
 
 // functions intro
 // function definition
