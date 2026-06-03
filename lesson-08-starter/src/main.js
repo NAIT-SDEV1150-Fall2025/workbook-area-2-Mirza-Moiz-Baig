@@ -6,7 +6,15 @@ window.addEventListener('DOMContentLoaded', () => { // (type of the event, ()=>{
   // add your DOM logic and event listeners here
 });
 // 2. Selecting elements
-
+const btnToggle = document.querySelector('#btn-toggle');
+btnToggle.addEventListener('click', () => {
+  console.log('button is clicked');
+});
+btnToggle.addEventListener('click', () => {
+  document.body.classList.toggle('highlight');
+  const on = document.body.classList.contains('highlight');// contains checks if highlight is there as a class or not returns true/false based on highlight class being there or not.
+  btnToggle.textContent = on ? 'Highlight is on' : 'highlight is off';
+});
 // 3. click: toggle a highlight class on the body
 
 // 4. click: change message textContent (no HTML parsing)
