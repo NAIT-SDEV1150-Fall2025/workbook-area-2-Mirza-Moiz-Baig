@@ -99,14 +99,14 @@ Event delegation is a simple pattern where you attach one event listener to a co
 list.addEventListener('click', (e) => {
   if (e.target.tagName === 'LI') {
     // Remove previous selection
-    const prev = list.querySelector('li.active');
+    const prev = e.target.querySelector('li.active');
     if (prev) {
       prev.classList.remove('active');
     }
     // Activate clicked
-    li.classList.add('active');
+    e.target.classList.add('active');
 
-    const id = li.getAttribute('data-id');
+    const id = e.target.getAttribute('data-id');
     selection.textContent = `Selected: Item ${id}`;
   }
 });
