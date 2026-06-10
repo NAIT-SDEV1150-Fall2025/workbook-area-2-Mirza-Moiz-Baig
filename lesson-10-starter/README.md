@@ -40,6 +40,7 @@ const result = document.querySelector('#result');
 
 ````js
 function serializeForm(formEl) {
+	
 	// Access inputs from form.elements
 	const { fullName, email, bio } = formEl.elements;
 
