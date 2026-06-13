@@ -44,7 +44,6 @@ closeBtn.addEventListener('click', () => {
 // Student TODO: Add event listener to document, which closes
 // the viewer when the Escape key is pressed
 
-
 // object/ list destructuring
 let a = 1;
 let b = 2;
@@ -53,10 +52,10 @@ console.log(a);
 console.log(b);
 
 let colors = ['red', 'green', 'blue', 'black', 'white'];
-[colors[0], colors[4]] = [colors[4], colors[0]];
+[colors[0], colors[4]] = [colors[4], colors[0]]; 
 console.log(colors);
 const color = ['white', 'green', 'blue', 'black', 'red'];
-const [first, second, third, ...extraColors] = color;
+const [first, second, third, ...extraColors] = color; // array destructuring
 console.log(extraColors);
 console.log(first);
 console.log(second);
@@ -64,18 +63,15 @@ console.log(third);
 
 const person1 = {
   name: 'SpongeBob',
-  gender : 'male',
-  age : '40'
-
-};
+  gender: 'male',
+  age: '40' };
 const person2 = {
   name: 'SquarePants',
   gender: 'female',
-  age: '30'
-};
+  age: '30' };
 console.log(person2.age);
 
-const {name, age, gender} = person2; // object destructuring
+const { age, name, gender } = person2; // object destructuring
 console.log(name);
 console.log(age);
 console.log(gender);

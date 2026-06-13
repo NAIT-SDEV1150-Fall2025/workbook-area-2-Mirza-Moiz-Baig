@@ -89,6 +89,18 @@ form.addEventListener('reset', () => {
 });
 ````
 
+
+| Method                       | What it does                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `setCustomValidity(message)` | Sets a custom error message. If `message` is not empty, the field becomes invalid.                      |
+| `setCustomValidity('')`      | Clears any custom error and makes the field valid again (assuming no other validation errors).          |
+| `checkValidity()`            | Returns `true` if the element/form is valid, otherwise `false`. Does **not** show error messages.       |
+| `reportValidity()`           | Checks validity and shows the browser's validation popup/message if invalid. Returns `true` or `false`. |
+| `validity`                   | Object containing detailed validation states (`valueMissing`, `tooShort`, `patternMismatch`, etc.).     |
+| `validationMessage`          | Returns the current error message for the field.                                                        |
+| `willValidate`               | Returns `true` if the element participates in validation.                                               |
+
+
 ## Push to your GitHub workbook repo
 
 Once you're done making your own custom updates to the project, stage your files, commit your work, and push to the remote repository.

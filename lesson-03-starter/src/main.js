@@ -61,12 +61,12 @@ const person = {1.0:moiz,
 // 1:"name" 1 is the key and "name" is the value
 // can have any primitive/composite data type in keys/values
 const PERSON = {
-    "name":"Moiz",
-    "age": "25",
-    "height":'6" 2"',
-    "weight" : "82kg"
+    name:"Moiz",
+    age:"25",
+    height:'6" 2"',
+    weight: "82kg"
 };
-console.log(PERSON,person);
+console.log(PERSON.name(),person);
 const PERSON_NAME = { name: 'Alex', age: 30 }; // const usually uses screaming snakecase.
 // Student TODO:
 // Prompt the user for their name and age
