@@ -13,7 +13,6 @@ function serializeForm(formEl) {
   // const fullName = formEl.elements.fullName.value;
   // const email = formEl.elements.email.value;
   // const bio = formEl.elements.bio.value;
-  
   // OPTIONAL: get the plan and topic values as well
   const plan = formEl.elements.plan.value;// getting the values of radiobuttons
   // getting checkboxes values.

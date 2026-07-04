@@ -22,6 +22,7 @@ export async function postData(endpoint, payload) {
   const data = response.json();
   return data;
 }
+
 // TODO: Add DELETE function here
 export async function deleteData(endpoint) {
   const response = await fetch(endpoint, {
