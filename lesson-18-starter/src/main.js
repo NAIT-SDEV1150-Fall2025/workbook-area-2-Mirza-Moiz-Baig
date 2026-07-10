@@ -60,6 +60,7 @@ async function submitHandler(e) {
   } catch (error) {
     // TODO: Display a better error for the user
     console.error('Error submitting form:', error);
+
   }
 }
 
