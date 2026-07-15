@@ -13,7 +13,38 @@
 <body>
   <main>
     <!-- Template here -->
+    <template id="user-card-template">
+      <style>
+        .card {
+  background: #ffffff;
+  color: #222222;
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 320px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+      </style>
+    <div class="card">
+      <img src="" width="80" height="80" alt="avatar">
+      <div class="info">
+        <span class="name">Zelda</span>
+        <span class="description">Princess of Hyrule</span>
+      </div>
+    </div>
+  </template>
     <!-- Create user-cards here -->
+     <user-card avatar = "assets/zelda-avatar.png"></user-card>
+     <user-card></user-card>
   </main>
 
 </body>
