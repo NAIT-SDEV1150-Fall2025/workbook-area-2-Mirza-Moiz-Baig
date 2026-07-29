@@ -36,4 +36,9 @@ toggleBtn.addEventListener('click', () => {
   document.documentElement.style.setProperty('--global-card-color', dark ? '#e5e7eb' : '#222222');
   document.documentElement.style.setProperty('--global-card-accent', dark ? 'gold' : '#0077ff');
 });
-
+// lesson 22 remaining part starts here
+document.querySelector('user-card').addEventListener('follow-change', (e) => {
+  const card = e.target;
+  const name = card.querySelector('[slot=name]').textContent;
+  console.log(`User ${name} is ${card.followed ? 'followed' : 'not followed'}`);
+});

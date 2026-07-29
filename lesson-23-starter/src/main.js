@@ -1,6 +1,13 @@
 // Import the user-card component to register the custom element
 import './user-card.js';
 
+const users = [
+  { id: 'u1', name: 'Zelda', avatar: 'assets/zelda-avatar.png', description: 'Princess of Hyrule' },
+  { id: 'u2', name: 'Link', avatar: 'assets/link-avatar.png', description: 'Hero of Hyrule' },
+  { id: 'u3', name: 'Mipha', description: 'Zora Champion' },
+];
+
+
 // Theme toggle button logic
 let dark = false;
 const toggleBtn = document.querySelector('#btn-theme');

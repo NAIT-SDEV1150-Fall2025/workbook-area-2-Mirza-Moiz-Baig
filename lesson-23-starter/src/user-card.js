@@ -54,18 +54,22 @@ template.innerHTML = `
 document.body.appendChild(template);
 
 class UserCard extends HTMLElement {
+  #followed = false;
+  #user = null;
+
   constructor() {
     super();
 
     // Added property to track follow state
-    this._followed = false;
+    this.#followed = false;
+    this.#user = null;
+    this._onButtonClick = this._onButtonClick.bind(this);
 
     const shadow = this.attachShadow({ mode: 'open' });
     const content = template.content.cloneNode(true);
-    const img = content.querySelector('img');
-    img.src = this.getAttribute('avatar') || 'https://placehold.co/80x80/0077ff/ffffff';
+    // we will keep the img src blank
+    this._img = content.querySelector('img');
     this._btn = content.querySelector('button');
-    this._btn.addEventListener('click', () => this._onFollow());
     shadow.appendChild(content);
   }
 
@@ -79,14 +83,14 @@ class UserCard extends HTMLElement {
 
   // Property to read followed state
   get followed() {
-    return this._followed;
+    return this.#followed;
   }
 
   _setFollow(value) {
-    this._followed = value;
-    this._btn.textContent = this._followed ? 'Following' : 'Follow';
+    this.#followed = value;
+    this._btn.textContent = this.#followed ? 'Following' : 'Follow';
     this.dispatchEvent(new CustomEvent('follow-change', {
-      detail: { id: this.getAttribute('user-id') || null, followed: this._followed },
+      detail: { id: this.getAttribute('user-id') || null, followed: this.#followed },
       bubbles: true,
       composed: true,
     }));
@@ -94,7 +98,54 @@ class UserCard extends HTMLElement {
 
   // Follow button handler
   _onFollow() {
-    this._setFollow(!this._followed);
+    this._setFollow(!this.#followed);
+  }
+
+  _renderFromUser() {
+    if (this.#user) {
+      if (this.#user.avatar) {
+        this._img.src = this.#user.avatar;
+      }
+      else {
+        this._img.src = 'https://placehold.co/80x80/0077ff/ffffff';
+      }
+      this.setAttribute('user-id', this.#user.id || '');
+      const nameSlot = this.shadowRoot.querySelector('[name = "name"]');
+      if (nameSlot) {
+        nameSlot.textContent = this.#user.name || '';
+      }
+      const descSlot = this.shadowRoot.querySelector('[name = "description"]');
+      if (descSlot) {
+        descSlot.textContent = this.#user.description || '';
+      }
+    }
+  }
+
+  _onButtonClick() {
+    this._setFollow(!this.#followed);
+  }
+
+  get user() {
+    return this.#user;
+  }
+
+  set user(obj) {
+    this.#user = obj;
+    this._renderFromUser();
+  }
+
+  // fires when an element is added to the DOM
+  connectedCallback() {
+    this._btn.addEventListener('click', this._onButtonClick);
+    if (this.#user) {
+      this._renderFromUser();
+    }
+    else {}
+  }
+
+// fires when an element is removed from the DOM
+  disconnectedCallback() {
+    this._btn.removeEventListener('click', this._onButtonClick);
   }
 
   // Respond to attribute changes if needed in the future
