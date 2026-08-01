@@ -114,7 +114,7 @@ class UserCard extends HTMLElement {
       if (nameSlot) {
         nameSlot.textContent = this.#user.name || '';
       }
-      const descSlot = this.shadowRoot.querySelector('[name = "description"]');
+      const descSlot = this.shadowRoot.querySelector('[name="description"]');
       if (descSlot) {
         descSlot.textContent = this.#user.description || '';
       }
@@ -140,7 +140,15 @@ class UserCard extends HTMLElement {
     if (this.#user) {
       this._renderFromUser();
     }
-    else {}
+    else {
+      const avatar = this.getAttribute('avatar');
+      if (avatar) {
+        this._img.src = avatar;
+      }
+      else {
+        this._img.src = 'https://placehold.co/80x80/0077ff/ffffff';
+      }
+    }
   }
 
 // fires when an element is removed from the DOM
