@@ -1,0 +1,40 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Legend of Hyrule",
+      "author": "Zelda",
+      "year": 2020,
+      "genre": "Fantasy"
+    },
+    {
+      "id": "2",
+      "title": "The Hero's Journey",
+      "author": "Link",
+      "year": 2022,
+      "genre": "Adventure"
+    },
+    {
+      "id": "3",
+      "title": "Chronicles of Ganon",
+      "author": "Ganondorf",
+      "year": 2021,
+      "genre": "Epic"
+    },
+    {
+      "title": "gdgf",
+      "author": "fgdfg",
+      "year": 2012,
+      "genre": "Epic",
+      "id": "6LVZTpO_3Zc"
+    },
+    {
+      "title": "gfg",
+      "author": "gjfgj",
+      "year": 2014,
+      "genre": "Fantasy",
+      "id": "5PNA2G5Yaus"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
